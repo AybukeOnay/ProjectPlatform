@@ -1,0 +1,27 @@
+﻿@model EntityLayer.Concrete.OgretimElemaniCalismaAlani
+@{
+    ViewData["Title"] = "OgretimElemaniCalismaAlaniEkle";
+    Layout = "~/Views/Shared/OgretimElemaniLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("OgretimElemaniCalismaAlaniEkle", "OgretimElemaniCalismaAlani", FormMethod.Post))
+{<div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Yeni Çalışma Alanı Ekle</h4>
+                <br />
+                @Html.HiddenFor(x => x.OgretimElemaniID, new { @class = "form-control" })
+            <form class="forms-sample">
+                <div class="form-group">
+                    <label for="exampleSelectGender">Çalışma Alanları</label>
+                    @Html.DropDownListFor(x => x.CalismaAlaniID, (List<SelectListItem>)ViewBag.v1, new { @class = "form-control" })
+                </div>
+                <button type="submit" class="btn btn-gradient-primary mr-2">Ekle</button>
+                <a href="/OgretimElemaniCalismaAlani/OgretimElemaniIleCalismaAlaniListele" class="btn btn-light">Vazgeç</a>        
+            </form>
+            </div>
+        </div>
+    </div>
+}
+

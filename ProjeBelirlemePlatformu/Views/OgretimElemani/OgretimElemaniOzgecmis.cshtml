@@ -1,0 +1,27 @@
+﻿@model EntityLayer.Concrete.OgretimElemani
+@{
+    ViewData["Title"] = "OgretimElemaniOzgecmis";
+    Layout = "~/Views/Shared/OgretimElemaniLayout.cshtml";
+}
+
+@using (Html.BeginForm("OgretimElemaniProfil", "OgretimElemani", FormMethod.Post))
+{<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Öğretim Elemanı Hakkında</h4>
+            <br />
+            @Html.HiddenFor(x => x.OgretimElemaniID, new { @class = "form-control" })
+        <form class="forms-sample">
+            <div class="form-group">
+                <label for="exampleTextarea1">Kısa Özgeçmiş</label>
+                <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-gradient-primary mr-2">Güncelle</button>
+            <button class="btn btn-light">Vazgeç</button>
+        </form>
+        </div>
+    </div>
+</div>
+}
+

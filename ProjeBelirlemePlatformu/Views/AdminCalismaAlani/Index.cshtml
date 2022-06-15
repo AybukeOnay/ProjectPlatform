@@ -1,0 +1,31 @@
+﻿@using EntityLayer.Concrete
+@model List<CalismaAlani> 
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>Çalışma Alanları</h1>
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Çalışma Alanı</th>
+        <th></th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+	{
+		 <tr>
+             <th>@item.CalismaAlaniID</th>
+             <td>@item.CalismaAlaniTanim</td>
+             <td><a href="/AdminCalismaAlani/CalismaAlaniSil/@item.CalismaAlaniID" class="btn btn-danger">Sil</a></td>
+             <td><a href="/AdminCalismaAlani/CalismaAlaniGuncelle/@item.CalismaAlaniID" class="btn btn-warning">Güncelle</a></td>
+         </tr>
+	}
+</table>
+<a href="/AdminCalismaAlani/CalismaAlaniEkle" class="btn btn-info">Çalışma Alanı Ekle</a>
+
+
+

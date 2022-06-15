@@ -1,0 +1,66 @@
+﻿@model EntityLayer.Concrete.OgretimElemani
+@{
+    ViewData["Title"] = "OgretimElemaniProfil";
+    Layout = "~/Views/Shared/OgretimElemaniLayout.cshtml";
+}
+
+@using (Html.BeginForm("OgretimElemaniProfil", "OgretimElemani", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Öğretim Elemanı Profil Bilgileri</h4>
+                <br />
+                @Html.HiddenFor(x => x.OgretimElemaniID, new { @class = "form-control" })
+                <form class="forms-sample">
+                    <div class="form-group">
+                        <label for="exampleInputName1">Adı</label>
+                        @Html.TextBoxFor(x => x.OgretimElemaniAd, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputName1">Soyadı</label>
+                        @Html.TextBoxFor(x => x.OgretimElemaniSoyad, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleSelectGender">Ünvanı</label>
+                        <select class="form-control" id="exampleSelectGender">
+                            <option>Araştırma Görevlisi</option>
+                            <option>Öğretim Görevlisi</option>
+                            <option>Dr.Öğretim Görevlisi</option>
+                            <option>Doçent</option>
+                            <option>Profesör</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleSelectGender">Cinsiyet</label>
+                        <select class="form-control" id="exampleSelectGender">
+                            <option>Erkek</option>
+                            <option>Kadın</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail3">Mail Adresi</label>
+                        @Html.TextBoxFor(x => x.OgretimElemaniMail, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword4">Şifre</label>
+                        @Html.PasswordFor(x => x.OgretimElemaniSifre, new { @class = "form-control" })
+                    </div>
+
+                    <div class="form-group">
+                        <label>Görsel</label>
+                        <input type="file" name="img[]" class="file-upload-default">
+                        <div class="input-group col-xs-12">
+                            <input type="text" class="form-control file-upload-info" disabled placeholder="Görsel seç">
+                            <span class="input-group-append">
+                                <button class="file-upload-browse btn btn-gradient-primary" type="button">Görsel Yükle</button>
+                            </span>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-gradient-primary mr-2">Güncelle</button>
+                    <button class="btn btn-light">Vazgeç</button>
+                </form>
+            </div>
+        </div>
+    </div>
+}

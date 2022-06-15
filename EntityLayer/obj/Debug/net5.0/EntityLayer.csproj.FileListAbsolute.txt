@@ -1,0 +1,12 @@
+D:\C# Projeler\ProjeBelirlemePlatformu\EntityLayer\bin\Debug\net5.0\EntityLayer.deps.json
+D:\C# Projeler\ProjeBelirlemePlatformu\EntityLayer\bin\Debug\net5.0\EntityLayer.dll
+D:\C# Projeler\ProjeBelirlemePlatformu\EntityLayer\bin\Debug\net5.0\ref\EntityLayer.dll
+D:\C# Projeler\ProjeBelirlemePlatformu\EntityLayer\bin\Debug\net5.0\EntityLayer.pdb
+D:\C# Projeler\ProjeBelirlemePlatformu\EntityLayer\obj\Debug\net5.0\EntityLayer.csprojAssemblyReference.cache
+D:\C# Projeler\ProjeBelirlemePlatformu\EntityLayer\obj\Debug\net5.0\EntityLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\C# Projeler\ProjeBelirlemePlatformu\EntityLayer\obj\Debug\net5.0\EntityLayer.AssemblyInfoInputs.cache
+D:\C# Projeler\ProjeBelirlemePlatformu\EntityLayer\obj\Debug\net5.0\EntityLayer.AssemblyInfo.cs
+D:\C# Projeler\ProjeBelirlemePlatformu\EntityLayer\obj\Debug\net5.0\EntityLayer.csproj.CoreCompileInputs.cache
+D:\C# Projeler\ProjeBelirlemePlatformu\EntityLayer\obj\Debug\net5.0\EntityLayer.dll
+D:\C# Projeler\ProjeBelirlemePlatformu\EntityLayer\obj\Debug\net5.0\ref\EntityLayer.dll
+D:\C# Projeler\ProjeBelirlemePlatformu\EntityLayer\obj\Debug\net5.0\EntityLayer.pdb

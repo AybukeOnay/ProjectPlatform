@@ -1,0 +1,33 @@
+﻿@using EntityLayer.Concrete
+@model List<Proje>
+
+    @{
+    ViewData["Title"] = "OgretimElemaniProjeListele";
+    Layout = "~/Views/Shared/OgretimElemaniLayout.cshtml";
+    }
+
+    <h3>Öğretim elemanı proje</h3>
+
+    <table class="table table-bordered">
+        <tr>
+            @*<th>ID</th>*@
+            <th>Proje Adı</th>
+            <th>Proje Tür</th>
+            <th>Proje Çalışma Alanı</th>
+            <th>Öğrenci Adı</th>
+
+        </tr>
+        @foreach (var item in Model)
+    {
+        <tr>
+            @*<th>@item.ProjeID</th>*@
+            <td>@item.ProjeAd</td>
+            <td>@item.ProjeTur</td>
+            <td>@item.CalismaAlani.CalismaAlaniTanim</td>
+            <td>@item.Ogrenci.OgrenciAd @item.Ogrenci.OgrenciSoyad</td>
+            <td><a href="#" class="btn btn-gradient-info">Görüntüle</a></td>
+        </tr>
+    }
+    </table>
+    <br />
+    <a href="/OgretimElemaniCalismaAlani/OgretimElemaniCalismaAlaniEkle" class="btn btn-gradient-primary">Tüm Projeleri Görüntüle</a>

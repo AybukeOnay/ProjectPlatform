@@ -1,0 +1,20 @@
+﻿@model EntityLayer.Concrete.CalismaAlani
+@{
+    ViewData["Title"] = "CalismaAlaniGuncelle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h1>Çalışma Alanı Güncelleme Sayfası</h1>
+<br />
+@using (Html.BeginForm("CalismaAlaniGuncelle", "AdminCalismaAlani", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Çalışma Alanı")
+        @Html.TextBoxFor(x => x.CalismaAlaniTanim, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-success">Güncelle</button>
+    </div>
+}
+
+

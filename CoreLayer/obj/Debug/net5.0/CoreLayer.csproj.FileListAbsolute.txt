@@ -1,0 +1,12 @@
+D:\C# Projeler\ProjeBelirlemePlatformu\CoreLayer\bin\Debug\net5.0\CoreLayer.deps.json
+D:\C# Projeler\ProjeBelirlemePlatformu\CoreLayer\bin\Debug\net5.0\CoreLayer.dll
+D:\C# Projeler\ProjeBelirlemePlatformu\CoreLayer\bin\Debug\net5.0\ref\CoreLayer.dll
+D:\C# Projeler\ProjeBelirlemePlatformu\CoreLayer\bin\Debug\net5.0\CoreLayer.pdb
+D:\C# Projeler\ProjeBelirlemePlatformu\CoreLayer\obj\Debug\net5.0\CoreLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\C# Projeler\ProjeBelirlemePlatformu\CoreLayer\obj\Debug\net5.0\CoreLayer.AssemblyInfoInputs.cache
+D:\C# Projeler\ProjeBelirlemePlatformu\CoreLayer\obj\Debug\net5.0\CoreLayer.AssemblyInfo.cs
+D:\C# Projeler\ProjeBelirlemePlatformu\CoreLayer\obj\Debug\net5.0\CoreLayer.csproj.CoreCompileInputs.cache
+D:\C# Projeler\ProjeBelirlemePlatformu\CoreLayer\obj\Debug\net5.0\CoreLayer.dll
+D:\C# Projeler\ProjeBelirlemePlatformu\CoreLayer\obj\Debug\net5.0\ref\CoreLayer.dll
+D:\C# Projeler\ProjeBelirlemePlatformu\CoreLayer\obj\Debug\net5.0\CoreLayer.pdb
+D:\C# Projeler\ProjeBelirlemePlatformu\CoreLayer\obj\Debug\net5.0\CoreLayer.csprojAssemblyReference.cache

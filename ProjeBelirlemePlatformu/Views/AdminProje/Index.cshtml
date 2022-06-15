@@ -1,0 +1,98 @@
+﻿@using EntityLayer.Concrete
+@model List<Proje>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <section class="content">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Projeler</h3>
+
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="card-body p-0">
+                <table class="table table-striped projects">
+                    <thead>
+                        <tr>
+                            <th style="width: 1%">
+                                #
+                            </th>
+                            <th style="width: 25%">
+                                Proje Adı
+                            </th>
+                            <th style="width: 15%">
+                                Öğrenci
+                            </th>
+                            <th style="width: 15%">
+                                Öğretmen
+                            </th>
+                            <th style="width: 15%">
+                                Çalışma Alanı
+                            </th>                      
+                            <th style="width: 20%">
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <th>
+                                @item.ProjeID
+                            </th>
+                            <td>
+                                <a>
+                                    @item.ProjeAd
+                                </a>
+                                <br />
+                                <small>
+                                    @(((DateTime)item.ProjeTarih).ToString("dd-MMM-yyyy"))
+                                </small>
+                            </td>
+                            <td>
+                                <a>
+                                    @item.Ogrenci.OgrenciAd  @item.Ogrenci.OgrenciSoyad
+                                </a>
+                            </td>
+                            <td>
+                                <a>
+                                    @item.OgretimElemani.OgretimElemaniAd @item.OgretimElemani.OgretimElemaniSoyad
+                                </a>
+                            </td>
+
+                            <td>
+                                <a>
+                                    @item.CalismaAlani.CalismaAlaniTanim
+                                </a>
+
+                            <td class="project-actions text-right">
+                                <a class="btn btn-primary btn-sm" href="#">
+                                    <i class="fas fa-folder">
+                                    </i>
+                                    Görüntüle
+                                </a>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.card-body -->
+        </div>
+    </section>
+</body>
+</html>
+
+
