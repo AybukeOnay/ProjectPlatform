@@ -1,4 +1,5 @@
 ﻿@model EntityLayer.Concrete.OgretimElemaniCalismaAlani
+
 @{
     ViewData["Title"] = "OgretimElemaniCalismaAlaniEkle";
     Layout = "~/Views/Shared/OgretimElemaniLayout.cshtml";
@@ -17,8 +18,9 @@
                     <label for="exampleSelectGender">Çalışma Alanları</label>
                     @Html.DropDownListFor(x => x.CalismaAlaniID, (List<SelectListItem>)ViewBag.v1, new { @class = "form-control" })
                 </div>
-                <button type="submit" class="btn btn-gradient-primary mr-2">Ekle</button>
-                <a href="/OgretimElemaniCalismaAlani/OgretimElemaniIleCalismaAlaniListele" class="btn btn-light">Vazgeç</a>        
+                <button type="submit" class="btn btn-gradient-primary btn-fw"><i class="mdi mdi-check"></i>   Ekle</button>
+                <a href="/OgretimElemaniCalismaAlani/OgretimElemaniIleCalismaAlaniListele" class="btn btn-gradient-primary btn-fw"><i class="mdi mdi-close"></i>    Vazgeç</a>  
+            @*<button href="/OgretimElemaniCalismaAlani/OgretimElemaniIleCalismaAlaniListele" type="button" class="btn btn-gradient-primary btn-fw"><i class="mdi mdi-close"></i>    Vazgeç</button>*@
             </form>
             </div>
         </div>

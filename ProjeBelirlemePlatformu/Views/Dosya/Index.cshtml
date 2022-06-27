@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/OgrenciLayout.cshtml";
+}
+
+
+
+
+<div class="row">
+    <div class="col-md-5">
+        <form method="post" enctype="multipart/form-data" asp-controller="Dosya" asp-action="Index">
+            <div class="form-group">
+                <div class="col-md-10">
+                    <p>Dosya Yükle</p>
+                    <input class="form-control" name="files" type="file" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-10">
+                    <button type="submit" href="/Dosya/DosyaListele" class="btn btn-gradient-primary btn-fw"><i class="mdi mdi-check"></i>    Yükle</button>
+                    
+                    @*<input href="/DosyaListele/Dosya" class="btn btn-gradient-primary btn-fw" type="submit" value="Yükle" />*@
+                    <a href="/Dosya/DosyaListele" class="btn btn-gradient-primary btn-fw"><i class="mdi mdi-close "></i>    Vazgeç</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div> 

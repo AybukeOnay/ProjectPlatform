@@ -5,20 +5,21 @@
 }
 
 @using (Html.BeginForm("OgretimElemaniProfil", "OgretimElemani", FormMethod.Post))
-{<div class="col-12 grid-margin stretch-card">
+{
+    <div class="col-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Öğretim Elemanı Hakkında</h4>
+            <h4 class="card-title">Öğretim Elemanı Özgeçmiş</h4>
             <br />
-            @Html.HiddenFor(x => x.OgretimElemaniID, new { @class = "form-control" })
+            @Html.HiddenFor(x => x.OgretimElemaniID, new { @class = "form-control" })         
         <form class="forms-sample">
             <div class="form-group">
                 <label for="exampleTextarea1">Kısa Özgeçmiş</label>
-                <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
+                 @Html.TextAreaFor(x => x.OgretimElemaniOzgecmis, new { @class = "form-control" })
             </div>
 
-            <button type="submit" class="btn btn-gradient-primary mr-2">Güncelle</button>
-            <button class="btn btn-light">Vazgeç</button>
+            <button href="/OgretimElemani/OgretimElemaniAnasayfa" type="submit" class="btn btn-gradient-primary btn-fw"><i class="mdi mdi-border-color"></i>    Güncelle</button>
+            <a href="/OgretimElemani/OgretimElemaniAnasayfa" class="btn btn-gradient-primary btn-fw"><i class="mdi mdi-close"></i>    Vazgeç</a>
         </form>
         </div>
     </div>

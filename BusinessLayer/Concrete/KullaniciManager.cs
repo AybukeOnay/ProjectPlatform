@@ -36,7 +36,7 @@ namespace BusinessLayer.Concrete
 
         public Kullanici TIDIleGetirBL(int vrb_id)
         {
-            throw new NotImplementedException();
+            return _kullaniciDal.IDIleGetir(vrb_id);
         }
 
         public List<Kullanici> TListeleBL()
@@ -46,7 +46,7 @@ namespace BusinessLayer.Concrete
 
         public void TSilBL(Kullanici cls_t)
         {
-            throw new NotImplementedException();
+            _kullaniciDal.Sil(cls_t);
         }
     }
 }

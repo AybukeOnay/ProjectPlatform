@@ -19,14 +19,14 @@ namespace BusinessLayer.Concrete
             _mesajDal = mesajDal;
         }
 
-        public List<Mesaj> OgretimElemaninaGelenMesajlariListele(string vrb_mail)
-        {
-            return _mesajDal.Listele(x => x.AliciMail == vrb_mail);
-        }
+        //public List<Mesaj> OgretimElemaninaGelenMesajlariListele(int alici)
+        //{
+        //    return _mesajDal.Listele(x => x.AliciID == vrb_mail);
+        //}
 
         public void TEkleBL(Mesaj cls_t)
         {
-            throw new NotImplementedException();
+            _mesajDal.Ekle(cls_t);
         }
 
         public Mesaj TFiltrelemeyeGoreGetirBL(Expression<Func<Mesaj, bool>> filter = null)
@@ -36,22 +36,22 @@ namespace BusinessLayer.Concrete
 
         public void TGuncelleBL(Mesaj cls_t)
         {
-            throw new NotImplementedException();
+            _mesajDal.Guncelle(cls_t);
         }
 
         public Mesaj TIDIleGetirBL(int vrb_id)
         {
-            throw new NotImplementedException();
+           return  _mesajDal.IDIleGetir(vrb_id);
         }
 
         public List<Mesaj> TListeleBL()
         {
-            throw new NotImplementedException();
+            return _mesajDal.Listele();
         }
 
         public void TSilBL(Mesaj cls_t)
         {
-            throw new NotImplementedException();
+            _mesajDal.Sil(cls_t);
         }
     }
 }

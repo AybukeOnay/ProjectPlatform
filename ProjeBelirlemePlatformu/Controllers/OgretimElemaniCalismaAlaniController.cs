@@ -15,13 +15,17 @@ namespace ProjeBelirlemePlatformu.Controllers
     {
         OgretimElemaniCalismaAlaniManager calismaAlani = new OgretimElemaniCalismaAlaniManager(new EfOgretimElemaniCalismaAlaniRepository());
         Context c = new Context();
+
         public IActionResult Index()
         {
             return View();
         }        
         public IActionResult OgretimElemaniIleCalismaAlaniListele()
         {
-            var calismaAlaniDeger = calismaAlani.OgretimElemaninaGoreListeleBL(2);
+            var ogretimElemaniMail = User.Identity.Name;
+            var ogretimElemaniId = c.OgretimElemanlari.Where(x => x.OgretimElemaniMail == ogretimElemaniMail).Select(y => y.OgretimElemaniID).FirstOrDefault();           
+            var calismaAlaniDeger = calismaAlani.OgretimElemaninaGoreListeleBL(ogretimElemaniId);
+
             return View(calismaAlaniDeger);
         }
         [HttpGet]
@@ -37,16 +41,21 @@ namespace ProjeBelirlemePlatformu.Controllers
             ViewBag.v1 = degerler;
             return View();
         }
+
         [HttpPost]
         public IActionResult OgretimElemaniCalismaAlaniEkle(OgretimElemaniCalismaAlani cls_ogretimElemaniCalismaAlani)
         {
-            cls_ogretimElemaniCalismaAlani.OgretimElemaniID = 2;
+            var ogretimElemaniMail = User.Identity.Name;
+            var ogretimElemaniId = c.OgretimElemanlari.Where(x => x.OgretimElemaniMail == ogretimElemaniMail).Select(y => y.OgretimElemaniID).FirstOrDefault();
+            cls_ogretimElemaniCalismaAlani.OgretimElemaniID = ogretimElemaniId;
             calismaAlani.TEkleBL(cls_ogretimElemaniCalismaAlani);
             return RedirectToAction("OgretimElemaniIleCalismaAlaniListele");
         }
-        public IActionResult OgretimElemaniCalismaAlaniSil(int vrb_id)
+
+        public IActionResult OgretimElemaniCalismaAlaniSil(int id)
         {
-            var calismaAlaniDeger = calismaAlani.TIDIleGetirBL(vrb_id);
+
+            var calismaAlaniDeger = calismaAlani.TIDIleGetirBL(id);
             calismaAlani.TSilBL(calismaAlaniDeger);
             return RedirectToAction("OgretimElemaniIleCalismaAlaniListele");
         }

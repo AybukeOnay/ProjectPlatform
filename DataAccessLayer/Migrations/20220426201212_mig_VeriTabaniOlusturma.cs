@@ -151,32 +151,7 @@ namespace DataAccessLayer.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "CalismaDosyalari",
-                columns: table => new
-                {
-                    CalismaDosyaID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ProjeID = table.Column<int>(type: "int", nullable: false),
-                    CalismaDosyaAd = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    CalismaDosyaTur = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    CalismaDosyaVeri = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CalismaDosyalari", x => x.CalismaDosyaID);
-                    table.ForeignKey(
-                        name: "FK_CalismaDosyalari_Projeler_ProjeID",
-                        column: x => x.ProjeID,
-                        principalTable: "Projeler",
-                        principalColumn: "ProjeID",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CalismaDosyalari_ProjeID",
-                table: "CalismaDosyalari",
-                column: "ProjeID");
+            
 
             migrationBuilder.CreateIndex(
                 name: "IX_OgretimElemaniCalismaAlanlari_CalismaAlaniID",
@@ -206,8 +181,6 @@ namespace DataAccessLayer.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "CalismaDosyalari");
 
             migrationBuilder.DropTable(
                 name: "Mesajlar");

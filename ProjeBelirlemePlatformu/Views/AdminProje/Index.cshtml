@@ -26,9 +26,7 @@
                 <table class="table table-striped projects">
                     <thead>
                         <tr>
-                            <th style="width: 1%">
-                                #
-                            </th>
+
                             <th style="width: 25%">
                                 Proje Adı
                             </th>
@@ -49,9 +47,6 @@
                         @foreach (var item in Model)
                         {
                         <tr>
-                            <th>
-                                @item.ProjeID
-                            </th>
                             <td>
                                 <a>
                                     @item.ProjeAd
@@ -78,7 +73,7 @@
                                 </a>
 
                             <td class="project-actions text-right">
-                                <a class="btn btn-primary btn-sm" href="#">
+                                <a class="btn btn-primary btn-sm" href="/AdminProje/AdminProjeGoruntule/@item.ProjeID">
                                     <i class="fas fa-folder">
                                     </i>
                                     Görüntüle

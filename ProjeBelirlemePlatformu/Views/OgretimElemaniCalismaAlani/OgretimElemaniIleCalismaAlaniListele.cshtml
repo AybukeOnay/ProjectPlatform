@@ -9,7 +9,7 @@
 
 <table class="table table-bordered">
     <tr>
-        <th>ID</th>
+        
         <th>Çalışma Alanı</th>
         <th></th>
 
@@ -17,10 +17,10 @@
     @foreach (var item in Model)
     {
         <tr>
-            <th>@item.CalismaAlaniID</th>
+            
             <td>@item.CalismaAlani.CalismaAlaniTanim</td>
-            <td><a href="/OgretimElemaniCalismaAlani/OgretimElemaniCalismaAlaniSil/@item.OgretimElemaniCalismaAlaniID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/OgretimElemaniCalismaAlani/OgretimElemaniCalismaAlaniSil/@item.OgretimElemaniCalismaAlaniID" class="btn btn-gradient-primary btn-fw"><i class="mdi mdi-trash-can"></i>   Sil</a></td>
         </tr>
     }
 </table>
-<a href="/OgretimElemaniCalismaAlani/OgretimElemaniCalismaAlaniEkle" class="btn btn-info">Yeni Çalışma Alanı Ekle</a>
+<a href="/OgretimElemaniCalismaAlani/OgretimElemaniCalismaAlaniEkle" class="btn btn-gradient-primary btn-fw"><i class="mdi mdi-plus"></i>    Çalışma Alanı Ekle</a>

@@ -1,0 +1,54 @@
+﻿@model EntityLayer.Concrete.Ogrenci
+
+@{
+    ViewData["Title"] = "AdminOgrenciGuncelle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+
+<h1>Öğrenci Güncelleme Sayfası</h1>
+
+@using (Html.BeginForm("AdminOgrenciGuncelle", "AdminOgrenci", FormMethod.Post))
+{
+<div class="form-group">
+    
+    @Html.HiddenFor(x => x.OgrenciID, new { @class = "form-control" })
+
+    @Html.Label("Adı")
+    @Html.TextBoxFor(x => x.OgrenciAd, new { @class = "form-control" })
+
+    @Html.Label("Soyadı")
+    @Html.TextBoxFor(x => x.OgrenciSoyad, new { @class = "form-control" })
+
+    @Html.Label("Telefon")
+    @Html.TextBoxFor(x => x.OgrenciTelefon, new { @class = "form-control" })
+
+    @*<div class="form-group">
+            <label for="exampleSelectGender">Cinsiyet</label>
+            <select class="form-control" name="OgrenciCinsiyet" id="exampleSelectGender">
+                <option>K</option>
+                <option>E</option>
+            </select>
+        </div>*@
+    @*@Html.Label("Cinsiyet")
+        @Html.TextBoxFor(x => x.OgrenciCinsiyet, new { @class = "form-control" })*@
+
+    @Html.Label("Mail Adresi")
+    @Html.TextBoxFor(x => x.OgrenciMail, new { @class = "form-control" })
+
+    @Html.Label("Şifre")
+    @Html.TextBoxFor(x => x.OgrenciSifre, new { @class = "form-control" })
+
+
+    <br />
+
+    <button type="submit" class="btn btn-success">Güncelle</button>
+    <a href="/AdminOgrenci/Index" class="btn btn-info">Vazgeç</a>
+</div>
+}
+
+
+
+
+

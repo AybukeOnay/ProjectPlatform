@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Concrete;
 using BusinessLayer.ValidationRules;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
@@ -15,6 +16,8 @@ namespace ProjeBelirlemePlatformu.Controllers
     public class OgrenciController : Controller
     {
         OgrenciManager ogrenciManager = new OgrenciManager(new EfOgrenciRepository());
+        Context context = new Context();
+
 
         public PartialViewResult OgrenciMenuPartial()
         {
@@ -26,38 +29,72 @@ namespace ProjeBelirlemePlatformu.Controllers
             return PartialView();
         }
 
-        [HttpGet]        
+        public IActionResult Anasayfa()
+        {
+            return View();
+        }
+
+        [HttpGet]
         public IActionResult OgrenciProfilListele()
         {
-            var ogrenciProfilDeger = ogrenciManager.TIDIleGetirBL(1);
+
+            var ogrenciMail = User.Identity.Name;
+            var ogrenciId = context.Ogrenciler.Where(x => x.OgrenciMail == ogrenciMail).Select(y => y.OgrenciID).FirstOrDefault();
+            var ogrenciProfilDeger = ogrenciManager.TIDIleGetirBL(ogrenciId);
+
             return View(ogrenciProfilDeger);
         }
 
         [HttpPost]
         public IActionResult OgrenciProfilListele(Ogrenci cls_ogrenci)
         {
-            OgrenciProfilKurallar ogrenciProfilKurallar = new OgrenciProfilKurallar();
-            ValidationResult sonuc = ogrenciProfilKurallar.Validate(cls_ogrenci);
-            if (sonuc.IsValid)
-            {
-                cls_ogrenci.OgrenciID = 1;
-                ogrenciManager.TGuncelleBL(cls_ogrenci);
-                return RedirectToAction("OgrenciProfilListele", "Ogrenci");
-            }
-            else
-            {
-                foreach (var item in sonuc.Errors)
-                {
-                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
-                }
-            }            
-            return View();
+            var ogrenciMail = User.Identity.Name;
+            var ogrenciId = context.Ogrenciler.Where(x => x.OgrenciMail == ogrenciMail).Select(y => y.OgrenciID).FirstOrDefault();
+            cls_ogrenci.OgrenciID = ogrenciId;
+            ogrenciManager.TGuncelleBL(cls_ogrenci);
+            return RedirectToAction("Anasayfa", "Ogrenci");
+
+            //OgrenciProfilKurallar ogrenciProfilKurallar = new OgrenciProfilKurallar();
+            //ValidationResult sonuc = ogrenciProfilKurallar.Validate(cls_ogrenci);
+            ////if (sonuc.IsValid)
+            //{
+            //    var ogrenciMail = User.Identity.Name;
+            //    var ogrenciId = context.Ogrenciler.Where(x => x.OgrenciMail == ogrenciMail).Select(y => y.OgrenciID).FirstOrDefault();
+            //    cls_ogrenci.OgrenciID = ogrenciId;
+            //    ogrenciManager.TGuncelleBL(cls_ogrenci);
+            //    return RedirectToAction("OgrenciProfilListele", "Ogrenci");
+            //}
+            //else
+            //{
+            //    foreach (var item in sonuc.Errors)
+            //    {
+            //        ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+            //    }
+            //}
+           
         }
 
+        [HttpGet]
         public IActionResult OgrenciHesapAyarlari()
         {
-            var ogrenciHesapDeger = ogrenciManager.TIDIleGetirBL(1);
-            return View(ogrenciHesapDeger);            
+            var ogrenciMail = User.Identity.Name;
+            var ogrenciId = context.Ogrenciler.Where(x => x.OgrenciMail == ogrenciMail).Select(y => y.OgrenciID).FirstOrDefault();
+            var ogrenciHesapDeger = ogrenciManager.TIDIleGetirBL(ogrenciId);
+
+            return View(ogrenciHesapDeger);
         }
+
+        [HttpPost]
+        public IActionResult OgrenciHesapAyarlari(Ogrenci cls_ogrenci)
+        {
+            var ogrenciMail = User.Identity.Name;
+            var ogrenciId = context.Ogrenciler.Where(x => x.OgrenciMail == ogrenciMail).Select(y => y.OgrenciID).FirstOrDefault();
+            cls_ogrenci.OgrenciID = ogrenciId;
+            ogrenciManager.TGuncelleBL(cls_ogrenci);
+
+            return RedirectToAction("Anasayfa");
+        }
+
+       
     }
 }

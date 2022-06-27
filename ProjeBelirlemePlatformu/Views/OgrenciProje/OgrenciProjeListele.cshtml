@@ -1,8 +1,41 @@
-﻿
+﻿@using EntityLayer.Concrete
+@model List<Proje>
+
 @{
     ViewData["Title"] = "OgrenciProjeListele";
     Layout = "~/Views/Shared/OgrenciLayout.cshtml";
 }
 
-<h1>Öğrenci Proje</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>Proje Adı</th>
+        <th>Proje Tür</th>
+        <th>Çalışma Alanı</th>
+        <th>Öğretim Elemanı</th>
+        <th></th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.ProjeAd</th>
+            <td>@item.ProjeTur</td>
+            <td>@item.CalismaAlani.CalismaAlaniTanim</td>
+            <td>@item.OgretimElemani.OgretimElemaniAd @item.OgretimElemani.OgretimElemaniSoyad</td>
+            <td>
+                <a href="/OgrenciProje/OgrenciProjeGuncelle/@item.ProjeID" class="btn btn-gradient-primary btn-fw"><i class="mdi mdi-border-color"></i>    Güncelle</a>
+                <a href="/OgrenciProje/OgrenciProjeSil/@item.ProjeID" class="btn btn-gradient-primary btn-fw">
+                    <i class="mdi mdi-trash-can"></i>   Sil
+                </a>
+                <a href="/Dosya/DosyaListele" class="btn btn-gradient-primary btn-fw"><i class="mdi mdi-file-document"></i>    Dosya Listele</a>
+
+            </td>
+        </tr>
+    }
+</table>
+<br />
+
+<a href="/OgrenciProje/OgrenciProjeEkle" class="btn btn-gradient-primary btn-fw"><i class="mdi mdi-plus"></i>    Proje Ekle</a>
+
+
 

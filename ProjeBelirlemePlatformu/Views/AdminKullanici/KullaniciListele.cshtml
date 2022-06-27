@@ -1,0 +1,65 @@
+﻿@using EntityLayer.Concrete
+@model List<Kullanici>
+
+@{
+    ViewData["Title"] = "KullaniciListele";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+
+
+
+<div class="row">
+    <div class="col-lg-6">
+        <div class="ibox ">
+            <div class="ibox-title">
+                <h4>Kullanıcılar</h4>
+                <div class="ibox-tools">
+                </div>
+            </div>
+            <div class="ibox-content">
+
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th> Adı</th>
+                            <th>Soyadı</th>
+                            <th> Mail</th>
+                            <th> Şifre</th>
+                            <th> Türü</th>
+                            <th></th>
+                        </tr>
+
+                    </thead>
+                    @foreach (var item in Model)
+                    {
+                        <tbody>
+                            <tr>
+                                <td>@item.KullaniciID</td>
+                                <td>@item.Ad</td>
+                                <td>@item.Soyad</td>
+                                <td>@item.Mail</td>
+                                <td>@item.Sifre</td>
+                                <td>@item.Tur</td>
+                                <td><a href="/AdminKullanici/KullaniciSil/@item.KullaniciID" class="btn btn-primary"><i class="fas fa-trash"></i>   Sil</a></td>
+                            </tr>
+                        </tbody>
+                    }
+
+                </table>
+                @*<a href="/AdminKullanici/KullaniciEkle" class="btn btn-outline btn-primary"
+                    <i class="fas fa-folder">
+                                     </i>> Kullanıcı Ekle</a>*@
+
+                <a class="btn btn-primary" href="/AdminKullanici/KullaniciEkle">
+                    <i class="fas fa-plus">
+                    </i>
+                    Kullanıcı Ekle
+                </a>
+                @*<button href="" type="button" class="btn btn-outline btn-primary">Primary</button>*@
+            </div>
+        </div>
+    </div>
+</div>

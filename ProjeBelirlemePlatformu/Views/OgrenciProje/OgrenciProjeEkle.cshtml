@@ -1,0 +1,51 @@
+﻿@model EntityLayer.Concrete.Proje
+
+@{
+    ViewData["Title"] = "OgrenciProjeEkle";
+    Layout = "~/Views/Shared/OgrenciLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("OgrenciProjeEkle", "OgrenciProje", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Proje Ekleme Sayfası</h4>
+                <br />
+               
+            <form class="forms-sample">
+                <div class="form-group">
+                    @Html.HiddenFor(x => x.OgrenciID, new { @class = "form-control" })
+                    <label for="exampleInputName1">Proje Adı</label>
+                    @Html.TextBoxFor(x => x.ProjeAd, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+            <label for="exampleInputName1">Proje Açıklama</label>
+            @Html.TextAreaFor(x => x.ProjeAciklama, new { @class = "form-control" })
+        </div>
+                <div class="form-group">
+                    <label for="exampleSelectGender">Proje Türü</label>
+                    <select class="form-control" name="ProjeTur" id="exampleSelectGender">
+                        <option>Dönem Projesi</option>
+                        <option>Tez</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Çalışma Alanı</label>
+                    @Html.DropDownListFor(x => x.CalismaAlaniID, (List<SelectListItem>)ViewBag.v1, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail3">Öğretim Elemanı</label>
+                    @Html.DropDownListFor(x => x.OgretimElemaniID, (List<SelectListItem>)ViewBag.v2, new { @class = "form-control" })
+                </div>
+                <button type="submit" class="btn btn-gradient-primary btn-fw"><i class="mdi mdi-check"></i>   Kaydet</button>
+                @*<a href="/OgrenciProje/OgrenciProjeListele" class="btn btn-gradient-primary mr-2">Kaydet</a>*@
+                @*<button type="submit" class="btn btn-gradient-primary mr-2">Kaydet</button>*@
+                <a href="/OgrenciProje/OgrenciProjeListele" class="btn btn-gradient-primary"><i class="mdi mdi-close"></i>    Vazgeç</a>
+            </form>
+            </div>
+        </div>
+    </div>
+}
+

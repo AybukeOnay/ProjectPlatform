@@ -1,17 +1,23 @@
-﻿<nav class="sidebar sidebar-offcanvas" id="sidebar">
+﻿
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
         <li class="nav-item nav-profile">
             <a href="#" class="nav-link">
                 <div class="nav-profile-image">
-                    <img src="~/YazarTema/yazar/writer/assets/images/faces/face1.jpg" alt="profile">
-                    <span class="login-status online"></span>
-                    <!--change to offline or busy as needed-->
+                    <img src="~/AdminLogin/images/user.png" alt="profile">
+                    
                 </div>
                 <div class="nav-profile-text d-flex flex-column">
-                    <span class="font-weight-bold mb-2">Öğretim Elemanı Adı</span>
-                    <span class="text-secondary text-small">Görevi</span>
+                    <span class="font-weight-bold mb-2">Öner Barut</span>
+                    @*<span class="text-secondary text-small">Görevi</span>*@
                 </div>
                 <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/OgretimElemani/OgretimElemaniAnasayfa">
+                <span class="menu-title">Ana Sayfa</span>
+                <i class="mdi mdi-home-variant menu-icon"></i>
             </a>
         </li>
 
@@ -21,12 +27,12 @@
                 <i class="mdi mdi-contacts menu-icon"></i>
             </a>
         </li>
-        <li class="nav-item">
+        @*<li class="nav-item">
             <a class="nav-link" href="/OgretimElemani/OgretimElemaniOzgecmis">
                 <span class="menu-title">Özgeçmiş</span>
                 <i class="mdi mdi-format-list-bulleted menu-icon"></i>
             </a>
-        </li>
+        </li>*@
         <li class="nav-item">
             <a class="nav-link" href="/OgretimElemaniCalismaAlani/OgretimElemaniIleCalismaAlaniListele">
                 <span class="menu-title">Çalışma Alanları</span>
@@ -40,19 +46,19 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="../../pages/tables/basic-table.html">
+            <a class="nav-link" href="#">
                 <span class="menu-title">Mesajlar</span>
                 <i class="mdi mdi-message menu-icon"></i>
             </a>
         </li>
-        <li class="nav-item">
+        @*<li class="nav-item">
             <a class="nav-link" href="/Bildirimler/BildirimleriListele">
                 <span class="menu-title">Bildirimler</span>
                 <i class="mdi mdi-bell-ring menu-icon"></i>
             </a>
-        </li>        
+        </li>*@
         <li class="nav-item">
-            <a class="nav-link" href="../../pages/tables/basic-table.html">
+            <a class="nav-link" href="/Login/Index">
                 <span class="menu-title">Çıkış Yap</span>
                 <i class="mdi mdi-logout-variant menu-icon"></i>
             </a>

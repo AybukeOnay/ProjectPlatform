@@ -1,0 +1,41 @@
+﻿@model EntityLayer.Concrete.Ogrenci
+
+@{
+    ViewData["Title"] = "AdminOgrenciEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+
+<h3>Öğrenci Ekleme Sayfası</h3>
+
+@using (Html.BeginForm("AdminOgrenciEkle", "AdminOgrenci", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Ad")
+        @Html.TextBoxFor(x => x.OgrenciAd, new { @class = "form-control" })
+
+        @Html.Label("Soyad")
+        @Html.TextBoxFor(x => x.OgrenciSoyad, new { @class = "form-control" })
+
+        @*<div class="form-group">
+                <label for="exampleSelectGender">Cinsiyet</label>
+                <select class="form-control" id="exampleSelectGender">
+                    <option>Kadın</option>
+                    <option>Erkek</option>
+                </select>
+            </div>*@
+
+        @Html.Label("Mail")
+        @Html.TextBoxFor(x => x.OgrenciMail, new { @class = "form-control" })
+
+        @Html.Label("Şifre")
+        @Html.TextBoxFor(x => x.OgrenciSifre, new { @class = "form-control" })
+
+        @Html.Label("Telefon")
+        @Html.TextBoxFor(x => x.OgrenciTelefon, new { @class = "form-control" })
+
+        <br />
+        <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i>    Kaydet</button>
+    </div>
+}
+

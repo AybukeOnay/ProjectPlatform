@@ -30,44 +30,62 @@ namespace ProjeBelirlemePlatformu.Controllers
             return PartialView();
         }
 
+        public IActionResult OgretimElemaniAnasayfa()
+        {
+            return View();
+        }
+
         [HttpGet]
         public IActionResult OgretimElemaniProfil()
-        {
-            var ogretimElemaniDeger = om.TIDIleGetirBL(1);
+        {         
+            var ogretimElemaniMail = User.Identity.Name;
+            var ogretimElemaniId = c.OgretimElemanlari.Where(x => x.OgretimElemaniMail == ogretimElemaniMail).Select(y => y.OgretimElemaniID).FirstOrDefault();
+            var ogretimElemaniDeger = om.TIDIleGetirBL(ogretimElemaniId);
+
             return View(ogretimElemaniDeger);
         }
         [HttpPost]
         public IActionResult OgretimElemaniProfil(OgretimElemani cls_ogretimElemani)
         {
-            OgretimElemaniKurallar kurallar = new OgretimElemaniKurallar();
-            ValidationResult sonuc = kurallar.Validate(cls_ogretimElemani);
-            if (sonuc.IsValid)
-            {
-                cls_ogretimElemani.OgretimElemaniID = 1;
-                om.TGuncelleBL(cls_ogretimElemani);
-                return RedirectToAction("Index", "OgretimElemani");
-            }
-            else
-            {
-                foreach (var item in sonuc.Errors)
-                {
-                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
-                }
-            }
-            return View();
+            //OgretimElemaniKurallar kurallar = new OgretimElemaniKurallar();
+            //ValidationResult sonuc = kurallar.Validate(cls_ogretimElemani);
+            var ogretimElemaniMail = User.Identity.Name;
+            var ogretimElemaniId = c.OgretimElemanlari.Where(x => x.OgretimElemaniMail == ogretimElemaniMail).Select(y => y.OgretimElemaniID).FirstOrDefault();
+            cls_ogretimElemani.OgretimElemaniID = ogretimElemaniId;
+            om.TGuncelleBL(cls_ogretimElemani);
+            return RedirectToAction("OgretimElemaniAnasayfa", "OgretimElemani");
+            
+            //if (sonuc.IsValid)
+            //{
+            //    cls_ogretimElemani.OgretimElemaniID = ogretimElemaniId; 
+            //    om.TGuncelleBL(cls_ogretimElemani);
+            //    return RedirectToAction("OgretimElemaniAnasayfa", "OgretimElemani");
+            //}
+            //else
+            //{
+            //    foreach (var item in sonuc.Errors)
+            //    {
+            //        ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+            //    }
+            //}
+            //return RedirectToAction("OgretimElemaniAnasayfa");
         }
         [HttpGet]
         public IActionResult OgretimElemaniOzgecmis()
         {
-                        
-            return View();
+            var ogretimElemaniMail = User.Identity.Name;
+            var ogretimElemaniId = c.OgretimElemanlari.Where(x => x.OgretimElemaniMail == ogretimElemaniMail).Select(y => y.OgretimElemaniID).FirstOrDefault();
+            var ogretimElemaniDeger = om.TIDIleGetirBL(ogretimElemaniId);
+            return View(ogretimElemaniDeger);
         }
         [HttpPost]
         public IActionResult OgretimElemaniOzgecmis(OgretimElemani cls_ogretimElemani)
         {
-            cls_ogretimElemani.OgretimElemaniID = 1;
-            om.TEkleBL(cls_ogretimElemani);
-            return View();
+            var ogretimElemaniMail = User.Identity.Name;
+            var ogretimElemaniId = c.OgretimElemanlari.Where(x => x.OgretimElemaniMail == ogretimElemaniMail).Select(y => y.OgretimElemaniID).FirstOrDefault();
+            cls_ogretimElemani.OgretimElemaniID = ogretimElemaniId;
+            om.TGuncelleBL(cls_ogretimElemani);
+            return RedirectToAction("OgretimElemaniAnasayfa");
         }
 
         [HttpGet]
@@ -75,6 +93,7 @@ namespace ProjeBelirlemePlatformu.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public IActionResult OgretimElemaniResimEkleme(ProfilResmiEkleme cls_profilResmiEkleme)
         {

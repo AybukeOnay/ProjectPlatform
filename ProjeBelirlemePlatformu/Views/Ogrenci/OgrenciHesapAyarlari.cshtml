@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/OgrenciLayout.cshtml";
 }
 
-@using (Html.BeginForm("OgrenciProfilListele", "Ogrenci", FormMethod.Post))
+@using (Html.BeginForm("OgrenciHesapAyarlari", "Ogrenci", FormMethod.Post))
 {
     <div class="col-12 grid-margin stretch-card">
         <div class="card">
@@ -19,10 +19,10 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword4">Şifre</label>
-                    @Html.PasswordFor(x => x.OgrenciSifre, new { @class = "form-control" })
+                    @Html.TextBoxFor(x => x.OgrenciSifre, new { @class = "form-control" })
                 </div>
-                <button type="submit" class="btn btn-gradient-primary mr-2">Güncelle</button>
-                <button class="btn btn-light">Vazgeç</button>
+                <button type="submit" class="btn btn-gradient-primary mr-2"><i class="mdi mdi-border-color"></i>    Güncelle</button>
+                <a href="/Ogrenci/Anasayfa" class="btn btn-gradient-primary mr-2"><i class="mdi mdi-close"></i>    Vazgeç</a>
             </form>
             </div>
         </div>

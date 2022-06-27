@@ -1,0 +1,25 @@
+﻿@model EntityLayer.Concrete.Proje
+
+@{
+    ViewData["Title"] = "AdminProjeGoruntule";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Proje Detay</h2>
+<br />
+@using (Html.BeginForm("AdminProjeGoruntule", "AdminProje", FormMethod.Post))
+{
+<div class="form-group">
+
+    @Html.Label("Proje Adı")
+    @Html.TextBoxFor(x => x.ProjeAd, new { @class = "form-control" })
+
+    @Html.Label("Proje Açıklama")
+    @Html.TextAreaFor(x => x.ProjeAciklama, new { @class = "form-control" })
+
+
+    <br />
+    <a href="/AdminProje/Index" class="btn btn-primary"><i class="fas fa-arrow-left"></i>    Geri Dön</a>
+</div>
+}

@@ -65,33 +65,32 @@ namespace DataAccessLayer.Migrations
                     b.ToTable("CalismaAlanlari");
                 });
 
-            modelBuilder.Entity("EntityLayer.Concrete.CalismaDosya", b =>
+            modelBuilder.Entity("EntityLayer.Concrete.Dosya", b =>
                 {
-                    b.Property<int>("CalismaDosyaID")
+                    b.Property<int>("DosyaID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("CalismaDosyaAd")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("CalismaDosyaTur")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("CalismaDosyaVeri")
+                    b.Property<string>("DosyaAd")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("DosyaTur")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<byte[]>("DosyaVeri")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<int>("ProjeID")
                         .HasColumnType("int");
 
-                    b.HasKey("CalismaDosyaID");
+                    b.HasKey("DosyaID");
 
                     b.HasIndex("ProjeID");
 
-                    b.ToTable("CalismaDosyalari");
+                    b.ToTable("Dosyalar");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Kullanici", b =>
@@ -132,13 +131,11 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("AliciMail")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                    b.Property<int?>("AliciID")
+                        .HasColumnType("int");
 
-                    b.Property<string>("GondericiMail")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                    b.Property<int?>("GondericiID")
+                        .HasColumnType("int");
 
                     b.Property<string>("MesajIcerik")
                         .HasColumnType("nvarchar(max)");
@@ -330,7 +327,7 @@ namespace DataAccessLayer.Migrations
                     b.ToTable("ResimDosyalari");
                 });
 
-            modelBuilder.Entity("EntityLayer.Concrete.CalismaDosya", b =>
+            modelBuilder.Entity("EntityLayer.Concrete.Dosya", b =>
                 {
                     b.HasOne("EntityLayer.Concrete.Proje", "Proje")
                         .WithMany()

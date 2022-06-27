@@ -21,22 +21,22 @@
                 <div class="form-group">
                     <label for="exampleInputName1">Soyadı</label>
                     @Html.TextBoxFor(x => x.OgrenciSoyad, new { @class = "form-control" })
-                </div>                
-                <div class="form-group">
-                    <label for="exampleSelectGender">Cinsiyet</label>
-                    <select class="form-control" id="exampleSelectGender">
-                        <option>Erkek</option>
-                        <option>Kadın</option>
-                    </select>
                 </div>
+                @*<div class="form-group">
+            <label for="exampleSelectGender">Cinsiyet</label>
+            <select class="form-control" name="OgrenciCinsiyet" id="exampleSelectGender">
+                <option>Erkek</option>
+                <option>Kadın</option>
+            </select>
+        </div>*@
                 <div class="form-group">
                     <label for="exampleInputEmail3">Telefon</label>
                     @Html.TextBoxFor(x => x.OgrenciTelefon, new { @class = "form-control" })
                 </div>
                 @*<div class="form-group">
-                    <label for="exampleInputPassword4">Şifre</label>
-                    @Html.PasswordFor(x => x.OgretimElemaniSifre, new { @class = "form-control" })
-                </div>*@
+            <label for="exampleInputPassword4">Şifre</label>
+            @Html.PasswordFor(x => x.OgretimElemaniSifre, new { @class = "form-control" })
+        </div>*@
 
                 <div class="form-group">
                     <label>Görsel</label>
@@ -48,8 +48,18 @@
                         </span>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-gradient-primary mr-2">Güncelle</button>
-                <button class="btn btn-light">Vazgeç</button>
+                <div class="form-group">
+                    <label for="exampleInputEmail3">Mail Adresi</label>
+                    @Html.TextBoxFor(x => x.OgrenciMail, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword4">Şifre</label>
+                    @Html.TextBoxFor(x => x.OgrenciSifre, new { @class = "form-control" })
+                </div>
+
+                <button type="submit" class="btn btn-gradient-primary mr-2"><i class="mdi mdi-border-color"></i>    Güncelle</button>
+                <a href="/Ogrenci/Anasayfa" class="btn btn-gradient-primary mr-2"><i class="mdi mdi-close"></i>    Vazgeç</a>
+                @*<button class="btn btn-light">Vazgeç</button>*@
             </form>
             </div>
         </div>

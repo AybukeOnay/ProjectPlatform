@@ -1,5 +1,6 @@
 ﻿@using EntityLayer.Concrete
 @model List<Ogrenci>
+
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
@@ -25,12 +26,13 @@
                     {
                         <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
                             <div class="card bg-light">
-                                <div class="card-header text-muted border-bottom-0">                                   
+                                <div class="card-header text-muted border-bottom-0">
                                 </div>
                                 <div class="card-body pt-0">
                                     <div class="row">
                                         <div class="col-7">
-                                            <h2 class="lead"><b>@item.OgrenciAd @item.OgrenciSoyad</b></h2>
+                                            <a href="/AdminOgrenci/AdminOgrenciGuncelle/@item.OgrenciID"><h2 class="lead"><b>@item.OgrenciAd @item.OgrenciSoyad</b></h2></a>
+
                                             <p class="text-muted text-sm"><b><br /></b></p>
                                             <ul class="ml-4 mb-0 fa-ul text-muted">
                                                 <li class="small"><span class="fa-li"><i class="fas fa-lg fa-mail-bulk"></i></span> Mail : @item.OgrenciMail</li>
@@ -38,21 +40,23 @@
                                             </ul>
                                         </div>
                                         <div class="col-5 text-center">
-                                            <img src="~/AdminLTE-3.0.4/dist/img/user1-128x128.jpg" alt="" class="img-circle img-fluid">
+                                            <img src="~/AdminLogin/images/user.png" alt="" class="img-circle img-fluid">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="card-footer">
                                     <div class="text-right">
                                         <a href="#" class="btn btn-sm bg-teal">
-                                            <i class="fas fa-comments">Mesaj Gönder</i>
+                                            <i class="fas fa-comments">    Mesaj Gönder</i>
                                         </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     }
+
                 </div>
+                <a href="/AdminOgrenci/AdminOgrenciEkle" class="btn btn-primary"><i class="fas fa-plus"></i>    Öğrenci Ekle</a>
             </div>
             <!-- /.card-body -->
             <div class="card-footer">
@@ -62,14 +66,12 @@
                         <li class="page-item"><a class="page-link" href="#">2</a></li>
                         <li class="page-item"><a class="page-link" href="#">3</a></li>
                         <li class="page-item"><a class="page-link" href="#">4</a></li>
-                        <li class="page-item"><a class="page-link" href="#">5</a></li>
-                        <li class="page-item"><a class="page-link" href="#">6</a></li>
-                        <li class="page-item"><a class="page-link" href="#">7</a></li>
-                        <li class="page-item"><a class="page-link" href="#">8</a></li>
                     </ul>
                 </nav>
             </div>
+            
         </div>
+        
     </section>
 </body>
 </html>

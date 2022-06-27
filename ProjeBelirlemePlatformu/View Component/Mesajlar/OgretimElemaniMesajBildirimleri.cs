@@ -12,13 +12,13 @@ namespace ProjeBelirlemePlatformu.View_Component.Mesajlar
     {
         MesajManager bm = new MesajManager(new EfMesajRepository());
 
-        public IViewComponentResult Invoke()
-        {
-            string p;
-            p = "onerbarut@gazi.edu.tr";
-            var degerler = bm.OgretimElemaninaGelenMesajlariListele(p);
-            return View(degerler);
-        }
+        //public IViewComponentResult Invoke()
+        //{
+        //    //string p;
+        //    //p = "onerbarut@gazi.edu.tr";
+        //    //var degerler = bm.OgretimElemaninaGelenMesajlariListele(p);
+        //    //return View(degerler);
+        //}
 
     }
 }

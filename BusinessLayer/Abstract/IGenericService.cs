@@ -15,5 +15,6 @@ namespace BusinessLayer.Abstract
         void TSilBL(T cls_t);
         void TGuncelleBL(T cls_t);
         T TFiltrelemeyeGoreGetirBL(Expression<Func<T, bool>> filter = null);
+        
     }
 }

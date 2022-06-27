@@ -1,0 +1,32 @@
+﻿@model EntityLayer.Concrete.Kullanici
+
+@{
+    ViewData["Title"] = "KullaniciEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h3>Yeni Kullanıcı Ekleme</h3>
+
+@using (Html.BeginForm("KullaniciEkle", "AdminKullanici", FormMethod.Post))
+{
+
+<div class="form-group">
+    <label>Kullanıcı Adı</label>
+    <input type="text" name="Ad" class="form-control">
+
+    <label>Kullanıcı Soyadı</label>
+    <input type="text" name="Soyad" class="form-control">
+
+    <label>Kullanıcı Mail</label>
+    <input type="text" name="Mail" class="form-control">
+
+    <label>Kullanıcı Şifre</label>
+    <input type="text" name="Sifre" class="form-control">
+
+    <label>Kullanıcı Türü</label>
+    <input type="text" name="Tur" class="form-control">
+</div>
+
+<button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i>    Kaydet</button>
+}
+

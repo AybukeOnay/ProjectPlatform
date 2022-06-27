@@ -1,0 +1,59 @@
+﻿@model EntityLayer.Concrete.OgretimElemani
+
+@{
+    ViewData["Title"] = "AdminOgretimElemaniGuncelle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+
+<h3>Öğretim Elemanı Bilgileri Güncelleme</h3>
+
+@using (Html.BeginForm("AdminOgretimElemaniGuncelle", "AdminOgretimElemani", FormMethod.Post))
+{
+    <div class="card-body">
+
+        
+        @Html.HiddenFor(x => x.OgretimElemaniID, new { @class = "form-control" })
+
+        @Html.Label("Adı")
+        @Html.TextBoxFor(x => x.OgretimElemaniAd, new { @class = "form-control" })
+
+        @Html.Label("Soyadı")
+        @Html.TextBoxFor(x => x.OgretimElemaniSoyad, new { @class = "form-control" })
+
+        <div class="form-group">
+            <label for="exampleSelectGender">Ünvan</label>
+            <select class="form-control" name="OgretimElemaniUnvan" id="exampleSelectGender">
+                <option>Araştırma Görevlisi</option>
+                <option>Öğretim Görevlisi</option>
+                <option>Dr.Öğretim Görevlisi</option>
+                <option>Doçent</option>
+                <option>Profesör</option>
+            </select>
+        </div>
+        @*<div class="form-group">
+            <label for="exampleSelectGender">Cinsiyet</label>
+            <select class="form-control" id="exampleSelectGender">
+                <option>K</option>
+                <option>E</option>
+            </select>
+        </div>*@
+
+
+        @Html.Label("Mail")
+        @Html.TextBoxFor(x => x.OgretimElemaniMail, new { @class = "form-control" })
+
+        @Html.Label("Şifre")
+        @Html.TextBoxFor(x => x.OgretimElemaniSifre, new { @class = "form-control" })
+
+        @Html.Label("Özgeçmiş")
+        @Html.TextAreaFor(x => x.OgretimElemaniOzgecmis, new { @class = "form-control" })
+
+        <br />
+        <button type="submit" class="btn btn-primary"><i class="fas fa-pencil-alt"></i>    Güncelle</button>
+        <a href="/AdminOgretimElemani/Index" class="btn btn-primary"><i class="fas fa-close"></i>    Vazgeç</a>
+
+    </div>
+}
+

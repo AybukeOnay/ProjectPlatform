@@ -32,6 +32,6 @@ namespace EntityLayer.Concrete
         [StringLength(1000)]
         public string ProjeAciklama { get; set; }
 
-        List<CalismaDosya> CalismaDosyalari { get; set; }
+        List<Dosya> Dosyalar { get; set; }
     }
 }

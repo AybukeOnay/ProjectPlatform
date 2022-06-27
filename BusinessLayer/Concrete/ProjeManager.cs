@@ -24,6 +24,16 @@ namespace BusinessLayer.Concrete
             return _projeDal.ProjeLookUpGetir();
         }
 
+        public List<Proje> ProjeLookUpGetirOgrenciBL(int vrb_id)
+        {
+            return _projeDal.ProjeLookUpGetirOgrenci(vrb_id);
+        }
+
+        public List<Proje> ProjeLookUpGetirOgretimElemaniBL(int vrb_id)
+        {
+            return _projeDal.ProjeLookUpGetirOgretimElemani(vrb_id);
+        }
+
         public void TEkleBL(Proje cls_t)
         {
             _projeDal.Ekle(cls_t);
@@ -41,12 +51,17 @@ namespace BusinessLayer.Concrete
 
         public Proje TIDIleGetirBL(int vrb_id)
         {
-            throw new NotImplementedException();
+           return _projeDal.IDIleGetir(vrb_id);
         }
 
         public List<Proje> TListeleBL()
         {
             return _projeDal.Listele();
+        }
+
+        public List<Proje> TSartliListeleBL(Expression<Func<Proje, bool>> filter)
+        {
+            return _projeDal.Listele(filter);
         }
 
         public void TSilBL(Proje cls_t)

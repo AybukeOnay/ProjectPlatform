@@ -33,7 +33,11 @@ namespace EntityLayer.Concrete
         public string OgrenciSifre { get; set; }
 
         public bool OgrenciDurum { get; set; }
+        
         public byte[] OgrenciResim { get; set; }
+
+        //public virtual ICollection<Mesaj> OgrenciAlici { get; set; }
+        //public virtual ICollection<Mesaj> OgrenciGonderici { get; set; }
 
         List<Proje> Projeler { get; set; }
     }

@@ -1,0 +1,37 @@
+﻿@using EntityLayer.Concrete
+@model List<Dosya>
+
+@{
+    ViewData["Title"] = "DosyaListele";
+    Layout = "~/Views/Shared/OgrenciLayout.cshtml";
+}
+
+<h4>Proje Dosyalar</h4>
+
+<table class="table table-bordered">
+    <tr>
+
+        <th>Dosya Adı</th>
+        <th>Dosya Tür</th>
+        @*<th>Proje Adı</th>*@
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>@item.DosyaAd</td>
+            <td>@item.DosyaTur</td>
+            @*<td>@item.Proje.ProjeAd</td>*@
+            <td>
+                <a href="#" class="btn btn-gradient-primary btn-fw"><i class="mdi mdi-glasses"></i>   Görüntüle</a>
+                <a href="/Dosya/DosyaSil/@item.DosyaID" class="btn btn-gradient-primary btn-fw">
+                    <i class="mdi mdi-trash-can"></i>   Sil
+                </a>
+            </td>
+        </tr>
+    }
+</table>
+<a href="/Dosya/Index" class="btn btn-gradient-primary btn-fw"><i class="mdi mdi-plus"></i>    Dosya Ekle</a>
+<a href="/OgrenciProje/OgrenciProjeListele" class="btn btn-gradient-primary btn-fw"><i class="mdi mdi-arrow-left"></i>    Geri Dön</a>
+

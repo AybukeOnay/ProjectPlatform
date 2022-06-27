@@ -37,35 +37,6 @@ namespace DataAccessLayer.Migrations
                     b.ToTable("CalismaAlanlari");
                 });
 
-            modelBuilder.Entity("EntityLayer.Concrete.CalismaDosya", b =>
-                {
-                    b.Property<int>("CalismaDosyaID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("CalismaDosyaAd")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("CalismaDosyaTur")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("CalismaDosyaVeri")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<int>("ProjeID")
-                        .HasColumnType("int");
-
-                    b.HasKey("CalismaDosyaID");
-
-                    b.HasIndex("ProjeID");
-
-                    b.ToTable("CalismaDosyalari");
-                });
-
             modelBuilder.Entity("EntityLayer.Concrete.Mesaj", b =>
                 {
                     b.Property<int>("MesajID")
@@ -253,16 +224,16 @@ namespace DataAccessLayer.Migrations
                     b.ToTable("ResimDosyalari");
                 });
 
-            modelBuilder.Entity("EntityLayer.Concrete.CalismaDosya", b =>
-                {
-                    b.HasOne("EntityLayer.Concrete.Proje", "Proje")
-                        .WithMany()
-                        .HasForeignKey("ProjeID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+            //modelBuilder.Entity("EntityLayer.Concrete.CalismaDosya", b =>
+            //    {
+            //        b.HasOne("EntityLayer.Concrete.Proje", "Proje")
+            //            .WithMany()
+            //            .HasForeignKey("ProjeID")
+            //            .OnDelete(DeleteBehavior.Cascade)
+            //            .IsRequired();
 
-                    b.Navigation("Proje");
-                });
+            //        b.Navigation("Proje");
+            //    });
 
             modelBuilder.Entity("EntityLayer.Concrete.OgretimElemaniCalismaAlani", b =>
                 {

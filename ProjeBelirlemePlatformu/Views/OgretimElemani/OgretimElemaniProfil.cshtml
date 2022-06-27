@@ -10,10 +10,10 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Öğretim Elemanı Profil Bilgileri</h4>
-                <br />
-                @Html.HiddenFor(x => x.OgretimElemaniID, new { @class = "form-control" })
+                <br />               
                 <form class="forms-sample">
                     <div class="form-group">
+                        @Html.HiddenFor(x => x.OgretimElemaniID, new { @class = "form-control" })
                         <label for="exampleInputName1">Adı</label>
                         @Html.TextBoxFor(x => x.OgretimElemaniAd, new { @class = "form-control" })
                     </div>
@@ -22,8 +22,12 @@
                         @Html.TextBoxFor(x => x.OgretimElemaniSoyad, new { @class = "form-control" })
                     </div>
                     <div class="form-group">
+                        <label for="exampleTextarea1">Kısa Özgeçmiş</label>
+                        @Html.TextAreaFor(x => x.OgretimElemaniOzgecmis, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
                         <label for="exampleSelectGender">Ünvanı</label>
-                        <select class="form-control" id="exampleSelectGender">
+                        <select class="form-control" name="OgretimElemaniUnvan" id="exampleSelectGender">
                             <option>Araştırma Görevlisi</option>
                             <option>Öğretim Görevlisi</option>
                             <option>Dr.Öğretim Görevlisi</option>
@@ -31,20 +35,20 @@
                             <option>Profesör</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleSelectGender">Cinsiyet</label>
-                        <select class="form-control" id="exampleSelectGender">
-                            <option>Erkek</option>
-                            <option>Kadın</option>
-                        </select>
-                    </div>
+                    @*<div class="form-group">
+            <label for="exampleSelectGender">Cinsiyet</label>
+            <select class="form-control" id="exampleSelectGender">
+                <option>Erkek</option>
+                <option>Kadın</option>
+            </select>
+        </div>*@
                     <div class="form-group">
                         <label for="exampleInputEmail3">Mail Adresi</label>
                         @Html.TextBoxFor(x => x.OgretimElemaniMail, new { @class = "form-control" })
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword4">Şifre</label>
-                        @Html.PasswordFor(x => x.OgretimElemaniSifre, new { @class = "form-control" })
+                        @Html.TextBoxFor(x => x.OgretimElemaniSifre, new { @class = "form-control" })
                     </div>
 
                     <div class="form-group">
@@ -57,8 +61,10 @@
                             </span>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-gradient-primary mr-2">Güncelle</button>
-                    <button class="btn btn-light">Vazgeç</button>
+                    <button href="/OgretimElemani/OgretimElemaniAnasayfa" type="submit" class="btn btn-gradient-primary btn-fw"><i class="mdi mdi-border-color"></i>    Güncelle</button>
+                    @*<button type="submit" class="btn btn-gradient-primary mr-2">Güncelle</button>*@
+                    <button href="/OgretimElemani/OgretimElemaniAnasayfa" type="submit" class="btn btn-gradient-primary btn-fw"><i class="mdi mdi-close"></i>    Vazgeç</button>
+                    @*<button class="btn btn-light">Vazgeç</button>*@
                 </form>
             </div>
         </div>

@@ -18,5 +18,11 @@ namespace ProjeBelirlemePlatformu.Controllers
             return View(projeDeger);            
         }
 
+        [HttpGet]
+        public IActionResult AdminProjeGoruntule(int id)
+        {            
+            var values = pm.TIDIleGetirBL(id);
+            return View(values);
+        }
     }
 }

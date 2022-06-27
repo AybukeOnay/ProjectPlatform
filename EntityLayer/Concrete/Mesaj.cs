@@ -12,11 +12,9 @@ namespace EntityLayer.Concrete
         [Key]
         public int MesajID { get; set; }
 
-        [StringLength(50)]
-        public string GondericiMail { get; set; }
+        public int? GondericiID { get; set; }
 
-        [StringLength(50)]
-        public string AliciMail { get; set; }
+        public int? AliciID { get; set; }
 
         [StringLength(100)]
         public string MesajKonu { get; set; }
@@ -24,5 +22,9 @@ namespace EntityLayer.Concrete
         public string MesajIcerik { get; set; }
 
         public DateTime MesajTarih { get; set; }
+
+        //public Ogrenci gondericiUser { get; set; }
+
+        //public Ogrenci aliciUser { get; set; }
     }
 }

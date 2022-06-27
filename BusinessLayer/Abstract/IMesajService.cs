@@ -9,6 +9,7 @@ namespace BusinessLayer.Abstract
 {
     public interface IMesajService: IGenericService<Mesaj>
     {
-        List<Mesaj> OgretimElemaninaGelenMesajlariListele(string vrb_mail);
+        //List<Mesaj> OgretimElemaninaGelenMesajlariListele(string vrb_mail);
+
     }
 }

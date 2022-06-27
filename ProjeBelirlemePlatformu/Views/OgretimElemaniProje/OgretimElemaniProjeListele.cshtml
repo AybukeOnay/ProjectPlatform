@@ -6,7 +6,7 @@
     Layout = "~/Views/Shared/OgretimElemaniLayout.cshtml";
     }
 
-    <h3>Öğretim elemanı proje</h3>
+    <h3>Öğretim Elemanı Proje</h3>
 
     <table class="table table-bordered">
         <tr>
@@ -25,9 +25,10 @@
             <td>@item.ProjeTur</td>
             <td>@item.CalismaAlani.CalismaAlaniTanim</td>
             <td>@item.Ogrenci.OgrenciAd @item.Ogrenci.OgrenciSoyad</td>
-            <td><a href="#" class="btn btn-gradient-info">Görüntüle</a></td>
+            <td><a href="#" class="btn btn-gradient-primary btn-fw"><i class="mdi mdi-file"></i>    Görüntüle</a></td>
         </tr>
     }
     </table>
     <br />
-    <a href="/OgretimElemaniCalismaAlani/OgretimElemaniCalismaAlaniEkle" class="btn btn-gradient-primary">Tüm Projeleri Görüntüle</a>
+    <a href="/OgretimElemaniProje/OgretimElemaniTumProjeleriListele" class="btn btn-gradient-primary btn-fw"><i class="mdi mdi-file"></i>   Tüm Projeleri Görüntüle</a>
+    @*<a href="/OgretimElemaniCalismaAlani/OgretimElemaniCalismaAlaniEkle" class="btn btn-gradient-primary btn-fw"><i class="mdi mdi-plus"></i>    Çalışma Alanı Ekle</a>*@

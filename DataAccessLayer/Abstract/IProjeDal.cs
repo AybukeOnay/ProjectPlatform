@@ -10,5 +10,8 @@ namespace DataAccessLayer.Abstract
     public interface IProjeDal: IGenericDal<Proje>
     {
         List<Proje> ProjeLookUpGetir();
+        List<Proje> ProjeLookUpGetirOgrenci(int vrb_id);
+        List<Proje> ProjeLookUpGetirOgretimElemani(int vrb_id);
+        
     }
 }
